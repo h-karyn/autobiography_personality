@@ -128,7 +128,7 @@ def personality_detection(chunks):
 
     chunked_chunks = divide_payloads(chunks, 10)
 
-    sfn = boto3.client('stepfunctions')
+    sfn = session.client('stepfunctions')
     response = sfn.list_state_machines()
     state_machine_arn = \
         [sm['stateMachineArn'] for sm in response['stateMachines'] if
