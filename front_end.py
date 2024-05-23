@@ -18,7 +18,7 @@ session = boto3.Session(
 
 s3 = session.client('s3')
 
-lambda_client = boto3.client('lambda')
+lambda_client = session.client('lambda')
 
 # Database connection configuration using environment variables
 config = {
